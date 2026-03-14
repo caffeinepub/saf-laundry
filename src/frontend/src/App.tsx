@@ -315,16 +315,16 @@ export default function App() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-border"
+            ? "bg-[oklch(45%_0.13_210)]/95 backdrop-blur-md shadow-sm border-b border-white/10"
             : "bg-transparent"
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             <img
-              src="/assets/uploads/logo-2--1.jpeg"
-              alt="SAF Laundry"
-              className="h-10 w-auto object-contain"
+              src="/assets/uploads/Logos-1-1.png"
+              alt="SAF Laundry Logo"
+              className="h-10 w-auto"
             />
           </div>
           <nav className="hidden md:flex items-center gap-6">
@@ -334,7 +334,7 @@ export default function App() {
                 key={section}
                 data-ocid={`nav.${section}.link`}
                 onClick={() => scrollToSection(section)}
-                className={`text-sm font-medium capitalize transition-colors hover:opacity-80 ${scrolled ? "text-foreground" : "text-white"}`}
+                className={`text-sm font-medium capitalize transition-colors hover:opacity-80 ${scrolled ? "text-white" : "text-white"}`}
               >
                 {section}
               </button>
@@ -373,7 +373,7 @@ export default function App() {
           className="absolute inset-0 bg-cover bg-center opacity-70"
           style={{
             backgroundImage:
-              "url('/assets/generated/saf-laundry-hero.dim_1200x600.jpg')",
+              "url('/assets/generated/hero-laundry-dark.dim_1920x1080.jpg')",
           }}
         />
         <div className="absolute inset-0 bubble-pattern" />
@@ -397,17 +397,6 @@ export default function App() {
               ✦ Ottapalam&apos;s Trusted Laundry Service
             </Badge>
           </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
-          >
-            SAF
-            <span className="block font-display italic font-semibold text-white/90">
-              Laundry
-            </span>
-          </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -1023,9 +1012,9 @@ export default function App() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <img
-                src="/assets/uploads/logo-2--1.jpeg"
-                alt="SAF Laundry"
-                className="h-8 w-auto object-contain"
+                src="/assets/uploads/Logos-1-1.png"
+                alt="SAF Laundry Logo"
+                className="h-8 w-auto"
               />
               <span className="text-muted-foreground text-sm">
                 &nbsp;&middot;&nbsp;East Ottapalam, Kerala
