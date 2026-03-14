@@ -126,7 +126,7 @@ const services = [
     description:
       "Professional pre-pleating of sarees to set perfect pleats before wearing. Ideal for silk, chiffon, and designer sarees.",
     badge: "Specialist",
-    image: "/assets/generated/service-sareecleaning.dim_400x300.jpg",
+    image: "/assets/uploads/saree-draping--1.jpeg",
   },
   {
     id: 8,
@@ -272,7 +272,7 @@ const coreValues = [
   },
 ];
 
-const NAV_SECTIONS = ["about", "services", "contact"] as const;
+const NAV_SECTIONS = ["services", "about", "contact"] as const;
 const FEATURES = [
   "Expert Care",
   "Quick Turnaround",
@@ -320,15 +320,12 @@ export default function App() {
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 hero-gradient rounded-lg flex items-center justify-center">
-              <Shirt className="w-4 h-4 text-white" />
-            </div>
-            <span
-              className={`font-display font-bold text-lg transition-colors ${scrolled ? "text-foreground" : "text-white"}`}
-            >
-              SAF Laundry
-            </span>
+          <div className="flex items-center">
+            <img
+              src="/assets/uploads/logo-2--1.jpeg"
+              alt="SAF Laundry"
+              className="h-10 w-auto object-contain"
+            />
           </div>
           <nav className="hidden md:flex items-center gap-6">
             {NAV_SECTIONS.map((section) => (
@@ -472,6 +469,79 @@ export default function App() {
         </div>
       </section>
 
+      {/* SERVICES */}
+      <section
+        id="services"
+        className="py-20 sm:py-28"
+        style={{ background: "oklch(97% 0.015 70)" }}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            {/* Services badge in amber/orange */}
+            <Badge className="bg-amber-100 text-amber-700 border-amber-200 mb-4 px-4 py-1">
+              Our Services
+            </Badge>
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+              What We Do Best
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+              From delicate silks to everyday wear, we handle all your laundry
+              needs with professional expertise.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, idx) => (
+              <motion.div
+                key={service.id}
+                data-ocid={`service.item.${service.id}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
+                className="card-hover group bg-card rounded-2xl overflow-hidden shadow-xs border border-border"
+              >
+                {/* Service image */}
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute top-3 right-3">
+                    <Badge
+                      className={`${badgeStyles[idx % badgeStyles.length]} border text-xs font-semibold`}
+                    >
+                      {service.badge}
+                    </Badge>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <div
+                    className={`w-8 h-8 ${iconGradients[idx % iconGradients.length]} rounded-lg flex items-center justify-center mb-3`}
+                  >
+                    <service.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <h3 className="font-display font-semibold text-base text-foreground leading-tight mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT */}
       <section id="about" className="py-20 sm:py-28 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -506,7 +576,7 @@ export default function App() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-lg">
                 <img
-                  src="/assets/generated/founder-rashid-pulikkal.dim_600x800.jpg"
+                  src="/assets/uploads/my-photo-1-1-1.jpeg"
                   alt="Mr. Rashid Pulikkal, Founder of SAF Laundry"
                   className="w-full h-96 object-cover object-top"
                 />
@@ -644,79 +714,6 @@ export default function App() {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {value.description}
                 </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section
-        id="services"
-        className="py-20 sm:py-28"
-        style={{ background: "oklch(97% 0.015 70)" }}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-14"
-          >
-            {/* Services badge in amber/orange */}
-            <Badge className="bg-amber-100 text-amber-700 border-amber-200 mb-4 px-4 py-1">
-              Our Services
-            </Badge>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
-              What We Do Best
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-              From delicate silks to everyday wear, we handle all your laundry
-              needs with professional expertise.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, idx) => (
-              <motion.div
-                key={service.id}
-                data-ocid={`service.item.${service.id}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
-                className="card-hover group bg-card rounded-2xl overflow-hidden shadow-xs border border-border"
-              >
-                {/* Service image */}
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <div className="absolute top-3 right-3">
-                    <Badge
-                      className={`${badgeStyles[idx % badgeStyles.length]} border text-xs font-semibold`}
-                    >
-                      {service.badge}
-                    </Badge>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <div
-                    className={`w-8 h-8 ${iconGradients[idx % iconGradients.length]} rounded-lg flex items-center justify-center mb-3`}
-                  >
-                    <service.icon className="w-4 h-4 text-white" />
-                  </div>
-                  <h3 className="font-display font-semibold text-base text-foreground leading-tight mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -1025,17 +1022,14 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 hero-gradient rounded-md flex items-center justify-center">
-                <Shirt className="w-3.5 h-3.5 text-white" />
-              </div>
-              <div>
-                <span className="font-display font-bold text-foreground text-sm">
-                  SAF Laundry
-                </span>
-                <span className="text-muted-foreground text-sm">
-                  &nbsp;&middot;&nbsp;East Ottapalam, Kerala
-                </span>
-              </div>
+              <img
+                src="/assets/uploads/logo-2--1.jpeg"
+                alt="SAF Laundry"
+                className="h-8 w-auto object-contain"
+              />
+              <span className="text-muted-foreground text-sm">
+                &nbsp;&middot;&nbsp;East Ottapalam, Kerala
+              </span>
             </div>
             <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
               <a
