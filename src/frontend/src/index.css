@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* SAF Laundry — Pantone Paradise Bay + Running Stream blues */
+    --background: 97 0.005 215;
+    --foreground: 18 0.03 225;
+
+    --card: 100 0 0;
+    --card-foreground: 18 0.03 225;
+
+    --popover: 100 0 0;
+    --popover-foreground: 18 0.03 225;
+
+    --primary: 55 0.11 215;
+    --primary-foreground: 100 0 0;
+
+    --secondary: 92 0.04 215;
+    --secondary-foreground: 30 0.06 215;
+
+    --muted: 94 0.03 215;
+    --muted-foreground: 50 0.05 220;
+
+    --accent: 48 0.11 208;
+    --accent-foreground: 100 0 0;
+
+    /* Coral/Orange accent */
+    --coral: 65 0.22 40;
+    --coral-foreground: 100 0 0;
+    --coral-muted: 94 0.08 40;
+
+    /* Golden Amber */
+    --amber: 75 0.2 80;
+    --amber-foreground: 100 0 0;
+    --amber-muted: 95 0.08 80;
+
+    /* Blue-slate (replaces violet, stays in blue family) */
+    --violet: 52 0.08 250;
+    --violet-foreground: 100 0 0;
+    --violet-muted: 94 0.05 250;
+
+    /* Emerald green */
+    --emerald: 62 0.18 155;
+    --emerald-muted: 94 0.07 155;
+
+    --destructive: 50 0.22 25;
+    --destructive-foreground: 100 0 0;
+
+    --border: 88 0.03 215;
+    --input: 88 0.03 215;
+    --ring: 55 0.11 215;
+
+    --radius: 0.75rem;
+
+    --chart-1: 55 0.11 215;
+    --chart-2: 70 0.14 160;
+    --chart-3: 65 0.1 230;
+    --chart-4: 80 0.08 215;
+    --chart-5: 48 0.11 208;
+
+    --sidebar: 96 0.01 215;
+    --sidebar-foreground: 18 0.03 225;
+    --sidebar-primary: 55 0.11 215;
+    --sidebar-primary-foreground: 100 0 0;
+    --sidebar-accent: 92 0.04 215;
+    --sidebar-accent-foreground: 30 0.06 215;
+    --sidebar-border: 88 0.03 215;
+    --sidebar-ring: 55 0.11 215;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+  .font-body {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(55% 0.11 215) 0%,
+      oklch(45% 0.13 210) 50%,
+      oklch(38% 0.14 205) 100%
+    );
+  }
+  .gradient-coral {
+    background: linear-gradient(
+      135deg,
+      oklch(65% 0.22 40) 0%,
+      oklch(58% 0.2 20) 100%
+    );
+  }
+  .gradient-amber {
+    background: linear-gradient(
+      135deg,
+      oklch(75% 0.2 80) 0%,
+      oklch(66% 0.22 55) 100%
+    );
+  }
+  .gradient-violet {
+    background: linear-gradient(
+      135deg,
+      oklch(52% 0.08 250) 0%,
+      oklch(44% 0.1 240) 100%
+    );
+  }
+  .gradient-emerald {
+    background: linear-gradient(
+      135deg,
+      oklch(62% 0.18 155) 0%,
+      oklch(54% 0.16 170) 100%
+    );
+  }
+  .gradient-teal-violet {
+    background: linear-gradient(
+      135deg,
+      oklch(55% 0.11 215) 0%,
+      oklch(48% 0.11 208) 100%
+    );
+  }
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px oklch(55% 0.11 215 / 0.2);
+  }
+  .bubble-pattern {
+    background-image: radial-gradient(
+        circle at 20% 50%,
+        oklch(70% 0.09 215 / 0.15) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        oklch(75% 0.08 210 / 0.12) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 60% 80%,
+        oklch(65% 0.1 220 / 0.1) 0%,
+        transparent 55%
+      );
+  }
+  .shadow-teal {
+    box-shadow: 0 8px 30px oklch(55% 0.11 215 / 0.35);
+  }
+  .shadow-coral {
+    box-shadow: 0 8px 30px oklch(65% 0.22 40 / 0.3);
+  }
+  .shadow-amber {
+    box-shadow: 0 8px 30px oklch(75% 0.2 80 / 0.3);
+  }
+  .shadow-violet {
+    box-shadow: 0 8px 30px oklch(52% 0.08 250 / 0.3);
+  }
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  .footer-rainbow-border {
+    border-image: linear-gradient(
+        90deg,
+        oklch(55% 0.11 215),
+        oklch(65% 0.22 40),
+        oklch(75% 0.2 80),
+        oklch(52% 0.08 250),
+        oklch(62% 0.18 155)
+      )
+      1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
