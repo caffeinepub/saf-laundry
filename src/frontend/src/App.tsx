@@ -76,7 +76,7 @@ const services = [
     description:
       "Expert dry cleaning for delicate fabrics, suits, sarees, and formal wear. Gentle solvents preserve colour and texture.",
     badge: "Premium",
-    image: "/assets/generated/service-dryclean.dim_400x300.jpg",
+    image: "/assets/uploads/Dry-Cleaners-in-Dwarka-1.jpeg",
   },
   {
     id: 2,
