@@ -1,6 +1,12 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
   CheckCircle2,
   ChevronDown,
   Clock,
@@ -46,7 +52,6 @@ const businessHours = [
   { day: "Sunday", hours: "8:00 AM – 1:00 PM", special: true },
 ];
 
-// Badge color rotation: teal, coral, amber, violet, emerald
 const badgeStyles = [
   "bg-primary/10 text-primary border-primary/20",
   "bg-orange-100 text-orange-700 border-orange-200",
@@ -55,7 +60,6 @@ const badgeStyles = [
   "bg-emerald-100 text-emerald-700 border-emerald-200",
 ];
 
-// Icon gradient rotation
 const iconGradients = [
   "hero-gradient",
   "gradient-coral",
@@ -272,6 +276,27 @@ const coreValues = [
   },
 ];
 
+const statsData = [
+  {
+    icon: Users,
+    value: "3,204",
+    label: "Satisfied Customers",
+    color: "hero-gradient",
+  },
+  {
+    icon: Shirt,
+    value: "1,19,604",
+    label: "Garments Cleaned",
+    color: "gradient-coral",
+  },
+  {
+    icon: SwatchBook,
+    value: "1000+",
+    label: "Shoes Cleaned",
+    color: "gradient-amber",
+  },
+];
+
 const NAV_SECTIONS = ["services", "about", "contact"] as const;
 const FEATURES = [
   "Expert Care",
@@ -279,6 +304,8 @@ const FEATURES = [
   "Affordable Prices",
   "Doorstep Pickup",
 ];
+
+type PolicyModal = "faq" | "cancellation" | "privacy" | "terms" | null;
 
 function StarRating({ count }: { count: number }) {
   return (
@@ -295,8 +322,198 @@ function getTodayName() {
   return new Date().toLocaleDateString("en-US", { weekday: "long" });
 }
 
+function FAQContent() {
+  const faqs = [
+    {
+      q: "What areas do you serve?",
+      a: "We currently serve Ottapalam and surrounding areas in Palakkad District, Kerala. Contact us to confirm if we cover your location.",
+    },
+    {
+      q: "Do you offer doorstep pickup and delivery?",
+      a: "Yes, we offer convenient doorstep pickup and delivery. Call us or WhatsApp to schedule a pickup time that suits you.",
+    },
+    {
+      q: "How long does it take to clean my clothes?",
+      a: "Standard laundry takes 24-48 hours. Dry cleaning and specialty items like sarees or wedding dresses may take 2-3 business days. We offer express service on request.",
+    },
+    {
+      q: "Is it safe to send delicate fabrics like silk sarees?",
+      a: "Absolutely. We specialise in handling delicate fabrics using eco-friendly wet cleaning and dry cleaning methods. Your garments are treated with the utmost care.",
+    },
+    {
+      q: "How do I pay for the service?",
+      a: "We accept cash on delivery as well as UPI and online bank transfers. Payment is collected at the time of delivery.",
+    },
+    {
+      q: "What if my clothes are damaged?",
+      a: "We take every precaution to care for your garments. In the unlikely event of damage caused by us, please contact us within 24 hours of delivery and we will resolve the issue promptly.",
+    },
+    {
+      q: "Do you clean household items like curtains, sofas, and mattresses?",
+      a: "Yes! We offer cleaning for curtains, blankets, carpets, sofas, mattresses, cushions, and more. Call us for pricing and scheduling.",
+    },
+  ];
+  return (
+    <div className="space-y-5">
+      {faqs.map((faq) => (
+        <div
+          key={faq.q}
+          className="border-b border-border pb-4 last:border-0 last:pb-0"
+        >
+          <p className="font-semibold text-foreground mb-1">{faq.q}</p>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            {faq.a}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function CancellationContent() {
+  return (
+    <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+      <p className="text-foreground font-semibold">Cancellation Policy</p>
+      <p>
+        You may cancel your order before pickup is collected. To cancel, please
+        call or WhatsApp us at{" "}
+        <strong className="text-foreground">8891109888</strong> as soon as
+        possible.
+      </p>
+      <p>
+        Once items have been picked up and processing has begun, cancellations
+        are not accepted.
+      </p>
+      <p className="text-foreground font-semibold mt-4">Refund Policy</p>
+      <p>
+        We strive for 100% customer satisfaction. If you are not satisfied with
+        our service, please contact us within{" "}
+        <strong className="text-foreground">24 hours of delivery</strong> with
+        details of your concern.
+      </p>
+      <p>Refunds are considered in the following cases:</p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Garments returned in worse condition than received.</li>
+        <li>Service not delivered as agreed.</li>
+        <li>Order cancelled before pickup is collected.</li>
+      </ul>
+      <p>
+        Refunds, if approved, will be processed within 3-5 business days via the
+        original payment method or cash as applicable.
+      </p>
+      <p>
+        SAF Laundry reserves the right to investigate all refund requests before
+        processing.
+      </p>
+      <p className="mt-4">
+        For any queries, contact us at{" "}
+        <strong className="text-foreground">8891109888</strong> or WhatsApp us
+        directly.
+      </p>
+    </div>
+  );
+}
+
+function PrivacyContent() {
+  return (
+    <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+      <p>
+        At SAF Laundry, we are committed to protecting your personal
+        information. This Privacy Policy explains how we collect, use, and
+        safeguard your data.
+      </p>
+      <p className="text-foreground font-semibold">Information We Collect</p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>
+          Name and contact details (phone number, address) provided when you
+          place an order.
+        </li>
+        <li>Pickup and delivery address for scheduling purposes.</li>
+        <li>Payment information (we do not store card details).</li>
+      </ul>
+      <p className="text-foreground font-semibold">
+        How We Use Your Information
+      </p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>To process and fulfil your laundry orders.</li>
+        <li>To contact you about pickup, delivery, or service updates.</li>
+        <li>To improve our services based on feedback.</li>
+      </ul>
+      <p className="text-foreground font-semibold">Data Sharing</p>
+      <p>
+        We do not sell or share your personal information with third parties for
+        marketing purposes. Your information is used solely for delivering our
+        services.
+      </p>
+      <p className="text-foreground font-semibold">Data Security</p>
+      <p>
+        We take reasonable measures to protect your personal information from
+        unauthorised access or disclosure.
+      </p>
+      <p className="text-foreground font-semibold">Contact</p>
+      <p>
+        For privacy-related concerns, contact us at{" "}
+        <strong className="text-foreground">8891109888</strong>.
+      </p>
+      <p className="text-xs mt-4">Last updated: March 2026</p>
+    </div>
+  );
+}
+
+function TermsContent() {
+  return (
+    <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+      <p>
+        By using the services of SAF Laundry, you agree to the following terms
+        and conditions.
+      </p>
+      <p className="text-foreground font-semibold">Services</p>
+      <p>
+        SAF Laundry provides laundry, dry cleaning, and fabric care services as
+        listed on our website. We reserve the right to refuse service for items
+        that are heavily soiled, damaged, or pose a safety risk.
+      </p>
+      <p className="text-foreground font-semibold">Liability</p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>
+          We take care of all garments with professional diligence. However, SAF
+          Laundry is not liable for pre-existing damage, colour fading due to
+          fabric quality, or damage caused by items left in pockets.
+        </li>
+        <li>
+          Our liability for any damaged item is limited to a maximum of 10x the
+          service charge for that item.
+        </li>
+      </ul>
+      <p className="text-foreground font-semibold">Uncollected Items</p>
+      <p>
+        Items not collected within 30 days of completion will be donated to
+        charity. SAF Laundry will not be liable for uncollected items after this
+        period.
+      </p>
+      <p className="text-foreground font-semibold">Pricing</p>
+      <p>
+        All prices are subject to change without prior notice. Final pricing is
+        confirmed at the time of order placement.
+      </p>
+      <p className="text-foreground font-semibold">Governing Law</p>
+      <p>
+        These terms are governed by the laws of India. Any disputes shall be
+        subject to the jurisdiction of courts in Palakkad District, Kerala.
+      </p>
+      <p className="text-foreground font-semibold">Contact</p>
+      <p>
+        For any queries regarding these terms, contact us at{" "}
+        <strong className="text-foreground">8891109888</strong>.
+      </p>
+      <p className="text-xs mt-4">Last updated: March 2026</p>
+    </div>
+  );
+}
+
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [openModal, setOpenModal] = useState<PolicyModal>(null);
   const todayName = getTodayName();
 
   useEffect(() => {
@@ -309,20 +526,34 @@ export default function App() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const policyLinks: { key: PolicyModal; label: string }[] = [
+    { key: "faq", label: "FAQ" },
+    { key: "cancellation", label: "Cancellation & Refund" },
+    { key: "privacy", label: "Privacy Policy" },
+    { key: "terms", label: "Terms & Conditions" },
+  ];
+
+  const modalTitles: Record<Exclude<PolicyModal, null>, string> = {
+    faq: "Frequently Asked Questions",
+    cancellation: "Cancellation & Refund Policy",
+    privacy: "Privacy Policy",
+    terms: "Terms & Conditions",
+  };
+
   return (
     <div className="min-h-screen bg-background font-body overflow-x-hidden">
       {/* HEADER */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[oklch(45%_0.13_210)]/95 backdrop-blur-md shadow-sm border-b border-white/10"
+            ? "bg-[oklch(42%_0.24_228)]/95 backdrop-blur-md shadow-sm border-b border-white/10"
             : "bg-transparent"
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <img
-              src="/assets/uploads/Logos-1-1.png"
+              src="/assets/uploads/Saf-Logo-1--1.png"
               alt="SAF Laundry Logo"
               className="h-10 w-auto"
             />
@@ -370,12 +601,13 @@ export default function App() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient"
       >
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-70"
+          className="absolute inset-0 bg-cover bg-center opacity-100"
           style={{
             backgroundImage:
-              "url('/assets/generated/hero-laundry.dim_1920x1080.jpg')",
+              "url('/assets/generated/hero-laundry-colorful.dim_1920x1080.jpg')",
           }}
         />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bubble-pattern" />
         <div className="absolute top-20 right-10 w-64 h-64 rounded-full bg-white/5 animate-float" />
         <div
@@ -394,7 +626,7 @@ export default function App() {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <Badge className="bg-amber-400/25 text-amber-100 border-amber-300/40 mb-6 px-4 py-1 text-sm font-medium">
-              ✦ Ottapalam&apos;s Trusted Laundry Service
+              ✦ Trusted Laundry Service in the City
             </Badge>
           </motion.div>
           <motion.p
@@ -405,15 +637,6 @@ export default function App() {
           >
             Professional Laundry &amp; Dry Clean Services
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
-            className="flex items-center justify-center gap-2 text-white/70 mb-10"
-          >
-            <MapPin className="w-4 h-4" />
-            <span className="text-base">Ottapalam, Kerala</span>
-          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -472,7 +695,6 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            {/* Services badge in amber/orange */}
             <Badge className="bg-amber-100 text-amber-700 border-amber-200 mb-4 px-4 py-1">
               Our Services
             </Badge>
@@ -496,7 +718,6 @@ export default function App() {
                 transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
                 className="card-hover group bg-card rounded-2xl overflow-hidden shadow-xs border border-border"
               >
-                {/* Service image */}
                 <div className="relative h-44 overflow-hidden">
                   <img
                     src={service.image}
@@ -541,7 +762,6 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            {/* About badge in violet */}
             <Badge className="bg-purple-100 text-purple-700 border-purple-200 mb-4 px-4 py-1">
               About Us
             </Badge>
@@ -555,8 +775,7 @@ export default function App() {
             </p>
           </motion.div>
 
-          {/* Founder + Story */}
-          <div className="grid md:grid-cols-2 gap-10 mb-16 items-center">
+          <div className="grid md:grid-cols-3 gap-10 mb-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -567,7 +786,7 @@ export default function App() {
                 <img
                   src="/assets/uploads/my-photo-1-1-1.jpeg"
                   alt="Mr. Rashid Pulikkal, Founder of SAF Laundry"
-                  className="w-full h-96 object-cover object-top"
+                  className="w-full object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-5 left-5 text-white">
@@ -583,9 +802,8 @@ export default function App() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex flex-col gap-5"
+              className="flex flex-col gap-5 md:col-span-2"
             >
-              {/* Feature icons: teal, coral, amber */}
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 hero-gradient rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Droplets className="w-5 h-5 text-white" />
@@ -637,7 +855,6 @@ export default function App() {
             </motion.div>
           </div>
 
-          {/* Mission */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -666,7 +883,6 @@ export default function App() {
             </blockquote>
           </motion.div>
 
-          {/* Core Values */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -709,12 +925,93 @@ export default function App() {
         </div>
       </section>
 
+      {/* STATS */}
+      <section
+        data-ocid="stats.section"
+        className="py-16 sm:py-20"
+        style={{
+          background: "oklch(96% 0.025 225)",
+          borderTop: "1px solid oklch(88% 0.04 225)",
+          borderBottom: "1px solid oklch(88% 0.04 225)",
+        }}
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <Badge
+              className="mb-4 px-4 py-1"
+              style={{
+                background: "oklch(52% 0.22 225 / 0.12)",
+                color: "oklch(38% 0.22 225)",
+                border: "1px solid oklch(52% 0.22 225 / 0.25)",
+              }}
+            >
+              Our Impact
+            </Badge>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-2">
+              Trusted by Thousands
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
+              Numbers that speak for our commitment to quality and care.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+            {statsData.map((stat, idx) => (
+              <motion.div
+                key={stat.label}
+                data-ocid={`stats.item.${idx + 1}`}
+                initial={{ opacity: 0, y: 32, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.55,
+                  delay: idx * 0.12,
+                  ease: "easeOut",
+                }}
+                className="relative bg-white rounded-3xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group"
+                style={{ border: "1px solid oklch(88% 0.04 225)" }}
+              >
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at 50% 0%, oklch(52% 0.22 225 / 0.06) 0%, transparent 70%)",
+                  }}
+                />
+                <div className="relative z-10">
+                  <div
+                    className={`w-14 h-14 ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-md`}
+                  >
+                    <stat.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <p
+                    className="font-display font-extrabold text-4xl sm:text-5xl mb-2 tracking-tight"
+                    style={{ color: "oklch(38% 0.22 225)" }}
+                  >
+                    {stat.value}
+                  </p>
+                  <p className="text-muted-foreground font-medium text-base">
+                    {stat.label}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       <section
         className="py-16 sm:py-24"
         style={{
           background:
-            "linear-gradient(135deg, oklch(55% 0.11 215), oklch(45% 0.13 210))",
+            "linear-gradient(135deg, oklch(52% 0.22 225), oklch(42% 0.24 228))",
         }}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -751,7 +1048,6 @@ export default function App() {
               </motion.div>
             ))}
           </div>
-          {/* Google Review CTA */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -803,7 +1099,6 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Contact badge stays teal */}
             <Badge className="bg-primary/10 text-primary border-primary/20 mb-4 px-4 py-1">
               Get In Touch
             </Badge>
@@ -999,20 +1294,45 @@ export default function App() {
         </div>
       </section>
 
+      {/* POLICY LINKS SECTION */}
+      <section
+        data-ocid="policy.section"
+        className="py-10 bg-muted/40 border-t border-border"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <p className="text-xs text-muted-foreground uppercase tracking-widest mb-5 font-medium">
+            Customer Information
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {policyLinks.map((link) => (
+              <button
+                key={link.key}
+                type="button"
+                data-ocid={`policy.${link.key}.open_modal_button`}
+                onClick={() => setOpenModal(link.key)}
+                className="px-5 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all duration-200"
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer
         className="bg-card py-8"
         style={{
           borderTop: "3px solid transparent",
           borderImage:
-            "linear-gradient(90deg, oklch(55% 0.11 215), oklch(65% 0.22 40), oklch(75% 0.2 80), oklch(52% 0.08 250), oklch(62% 0.18 155)) 1",
+            "linear-gradient(90deg, oklch(52% 0.22 225), oklch(65% 0.22 40), oklch(75% 0.2 80), oklch(52% 0.08 250), oklch(62% 0.18 155)) 1",
         }}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <img
-                src="/assets/uploads/Logos-1-1.png"
+                src="/assets/uploads/Saf-Logo-1--1.png"
                 alt="SAF Laundry Logo"
                 className="h-8 w-auto"
               />
@@ -1102,6 +1422,29 @@ export default function App() {
       >
         <MessageCircle className="w-7 h-7 text-white" />
       </a>
+
+      {/* POLICY MODALS */}
+      <Dialog
+        open={openModal !== null}
+        onOpenChange={(open) => !open && setOpenModal(null)}
+      >
+        <DialogContent
+          className="max-w-lg max-h-[80vh] overflow-y-auto"
+          data-ocid="policy.dialog"
+        >
+          <DialogHeader>
+            <DialogTitle className="font-display text-xl">
+              {openModal ? modalTitles[openModal] : ""}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="mt-2">
+            {openModal === "faq" && <FAQContent />}
+            {openModal === "cancellation" && <CancellationContent />}
+            {openModal === "privacy" && <PrivacyContent />}
+            {openModal === "terms" && <TermsContent />}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

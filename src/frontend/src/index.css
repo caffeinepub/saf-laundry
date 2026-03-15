@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    /* SAF Laundry — Pantone Paradise Bay + Running Stream blues */
-    --background: 97 0.005 215;
-    --foreground: 18 0.03 225;
+    /* SAF Laundry — Azure Blue theme */
+    --background: 97 0.005 225;
+    --foreground: 18 0.03 230;
 
     --card: 100 0 0;
-    --card-foreground: 18 0.03 225;
+    --card-foreground: 18 0.03 230;
 
     --popover: 100 0 0;
-    --popover-foreground: 18 0.03 225;
+    --popover-foreground: 18 0.03 230;
 
-    --primary: 55 0.11 215;
+    --primary: 52 0.22 225;
     --primary-foreground: 100 0 0;
 
-    --secondary: 92 0.04 215;
-    --secondary-foreground: 30 0.06 215;
+    --secondary: 92 0.04 225;
+    --secondary-foreground: 30 0.06 225;
 
-    --muted: 94 0.03 215;
-    --muted-foreground: 50 0.05 220;
+    --muted: 94 0.03 225;
+    --muted-foreground: 50 0.05 225;
 
-    --accent: 48 0.11 208;
+    --accent: 45 0.22 225;
     --accent-foreground: 100 0 0;
 
     /* Coral/Orange accent */
@@ -38,7 +38,7 @@
     --amber-foreground: 100 0 0;
     --amber-muted: 95 0.08 80;
 
-    /* Blue-slate (replaces violet, stays in blue family) */
+    /* Blue-slate */
     --violet: 52 0.08 250;
     --violet-foreground: 100 0 0;
     --violet-muted: 94 0.05 250;
@@ -50,26 +50,26 @@
     --destructive: 50 0.22 25;
     --destructive-foreground: 100 0 0;
 
-    --border: 88 0.03 215;
-    --input: 88 0.03 215;
-    --ring: 55 0.11 215;
+    --border: 88 0.03 225;
+    --input: 88 0.03 225;
+    --ring: 52 0.22 225;
 
     --radius: 0.75rem;
 
-    --chart-1: 55 0.11 215;
+    --chart-1: 52 0.22 225;
     --chart-2: 70 0.14 160;
-    --chart-3: 65 0.1 230;
-    --chart-4: 80 0.08 215;
-    --chart-5: 48 0.11 208;
+    --chart-3: 65 0.1 240;
+    --chart-4: 80 0.08 225;
+    --chart-5: 45 0.22 225;
 
-    --sidebar: 96 0.01 215;
-    --sidebar-foreground: 18 0.03 225;
-    --sidebar-primary: 55 0.11 215;
+    --sidebar: 96 0.01 225;
+    --sidebar-foreground: 18 0.03 230;
+    --sidebar-primary: 52 0.22 225;
     --sidebar-primary-foreground: 100 0 0;
-    --sidebar-accent: 92 0.04 215;
-    --sidebar-accent-foreground: 30 0.06 215;
-    --sidebar-border: 88 0.03 215;
-    --sidebar-ring: 55 0.11 215;
+    --sidebar-accent: 92 0.04 225;
+    --sidebar-accent-foreground: 30 0.06 225;
+    --sidebar-border: 88 0.03 225;
+    --sidebar-ring: 52 0.22 225;
   }
 }
 
@@ -100,9 +100,9 @@
   .hero-gradient {
     background: linear-gradient(
       135deg,
-      oklch(55% 0.11 215) 0%,
-      oklch(45% 0.13 210) 50%,
-      oklch(38% 0.14 205) 100%
+      oklch(52% 0.22 225) 0%,
+      oklch(42% 0.24 228) 50%,
+      oklch(35% 0.22 232) 100%
     );
   }
   .gradient-coral {
@@ -136,8 +136,8 @@
   .gradient-teal-violet {
     background: linear-gradient(
       135deg,
-      oklch(55% 0.11 215) 0%,
-      oklch(48% 0.11 208) 100%
+      oklch(52% 0.22 225) 0%,
+      oklch(45% 0.22 225) 100%
     );
   }
   .card-hover {
@@ -145,27 +145,27 @@
   }
   .card-hover:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px oklch(55% 0.11 215 / 0.2);
+    box-shadow: 0 20px 40px oklch(52% 0.22 225 / 0.2);
   }
   .bubble-pattern {
     background-image: radial-gradient(
         circle at 20% 50%,
-        oklch(70% 0.09 215 / 0.15) 0%,
+        oklch(70% 0.12 225 / 0.15) 0%,
         transparent 60%
       ),
       radial-gradient(
         circle at 80% 20%,
-        oklch(75% 0.08 210 / 0.12) 0%,
+        oklch(75% 0.1 220 / 0.12) 0%,
         transparent 50%
       ),
       radial-gradient(
         circle at 60% 80%,
-        oklch(65% 0.1 220 / 0.1) 0%,
+        oklch(65% 0.14 230 / 0.1) 0%,
         transparent 55%
       );
   }
   .shadow-teal {
-    box-shadow: 0 8px 30px oklch(55% 0.11 215 / 0.35);
+    box-shadow: 0 8px 30px oklch(52% 0.22 225 / 0.35);
   }
   .shadow-coral {
     box-shadow: 0 8px 30px oklch(65% 0.22 40 / 0.3);
@@ -182,7 +182,7 @@
   .footer-rainbow-border {
     border-image: linear-gradient(
         90deg,
-        oklch(55% 0.11 215),
+        oklch(52% 0.22 225),
         oklch(65% 0.22 40),
         oklch(75% 0.2 80),
         oklch(52% 0.08 250),
