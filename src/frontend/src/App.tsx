@@ -373,7 +373,7 @@ export default function App() {
           className="absolute inset-0 bg-cover bg-center opacity-70"
           style={{
             backgroundImage:
-              "url('/assets/generated/hero-laundry-dark.dim_1920x1080.jpg')",
+              "url('/assets/generated/hero-laundry.dim_1920x1080.jpg')",
           }}
         />
         <div className="absolute inset-0 bubble-pattern" />
