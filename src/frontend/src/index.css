@@ -6,9 +6,9 @@
 
 @layer base {
   :root {
-    /* SAF Laundry — Azure Blue theme */
+    /* Saf Laundry — Azure Blue theme */
     --background: 97 0.005 225;
-    --foreground: 18 0.03 230;
+    --foreground: 10 0.01 0;
 
     --card: 100 0 0;
     --card-foreground: 18 0.03 230;
@@ -20,10 +20,10 @@
     --primary-foreground: 100 0 0;
 
     --secondary: 92 0.04 225;
-    --secondary-foreground: 30 0.06 225;
+    --secondary-foreground: 15 0.01 0;
 
     --muted: 94 0.03 225;
-    --muted-foreground: 50 0.05 225;
+    --muted-foreground: 20 0.01 0;
 
     --accent: 45 0.22 225;
     --accent-foreground: 100 0 0;

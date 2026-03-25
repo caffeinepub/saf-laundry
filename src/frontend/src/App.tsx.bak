@@ -361,7 +361,9 @@ function FAQContent() {
           className="border-b border-border pb-4 last:border-0 last:pb-0"
         >
           <p className="font-semibold text-foreground mb-1">{faq.q}</p>
-          <p className="text-gray-700 text-sm leading-relaxed">{faq.a}</p>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            {faq.a}
+          </p>
         </div>
       ))}
     </div>
@@ -370,7 +372,7 @@ function FAQContent() {
 
 function CancellationContent() {
   return (
-    <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+    <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
       <p className="text-foreground font-semibold">Cancellation Policy</p>
       <p>
         You may cancel your order before pickup is collected. To cancel, please
@@ -414,7 +416,7 @@ function CancellationContent() {
 
 function PrivacyContent() {
   return (
-    <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+    <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
       <p>
         At Saf Laundry, we are committed to protecting your personal
         information. This Privacy Policy explains how we collect, use, and
@@ -460,7 +462,7 @@ function PrivacyContent() {
 
 function TermsContent() {
   return (
-    <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+    <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
       <p>
         By using the services of Saf Laundry, you agree to the following terms
         and conditions.
@@ -701,7 +703,7 @@ export default function App() {
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
               What We Do Best
             </h2>
-            <p className="text-gray-700 text-lg max-w-xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
               From delicate silks to everyday wear, we handle all your laundry
               needs with professional expertise.
             </p>
@@ -742,7 +744,7 @@ export default function App() {
                   <h3 className="font-display font-semibold text-base text-foreground leading-tight mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -768,7 +770,7 @@ export default function App() {
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
               Our Rates &amp; Packages
             </h2>
-            <p className="text-gray-700 max-w-xl mx-auto text-base sm:text-lg">
+            <p className="text-muted-foreground max-w-xl mx-auto text-base sm:text-lg">
               Simple, affordable pricing for every garment. No hidden charges —
               what you see is what you pay.
             </p>
@@ -852,7 +854,7 @@ export default function App() {
                 <h3 className="text-xl font-extrabold tracking-tight text-foreground">
                   Gents Daily Wear
                 </h3>
-                <p className="text-gray-700 text-sm">366 pieces</p>
+                <p className="text-muted-foreground text-sm">366 pieces</p>
                 <div className="flex items-center gap-3 mt-1">
                   <span className="text-2xl font-extrabold text-gray-800">
                     ₹16,470
@@ -895,7 +897,7 @@ export default function App() {
                 <h3 className="text-xl font-extrabold tracking-tight text-foreground">
                   Gents Daily Wear
                 </h3>
-                <p className="text-gray-700 text-sm">182 pieces</p>
+                <p className="text-muted-foreground text-sm">182 pieces</p>
                 <div className="flex items-center gap-3 mt-1">
                   <span className="text-2xl font-extrabold text-gray-800">
                     ₹8,700
@@ -994,7 +996,7 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center"
           >
-            <p className="text-xs text-gray-700 mb-6">
+            <p className="text-xs text-muted-foreground mb-6">
               * Prices may vary based on garment type and condition. Contact us
               for a custom quote.
             </p>
@@ -1042,7 +1044,7 @@ export default function App() {
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
               About Saf Laundry
             </h2>
-            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               At Saf Laundry, we believe that clean clothes are about more than
               just hygiene — they are about reclaiming your most valuable asset:
               time.
@@ -1086,7 +1088,7 @@ export default function App() {
                   <h3 className="font-display font-semibold text-foreground text-lg mb-1">
                     Pioneers in Modern Laundry
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     When we started Saf Laundry, live laundry concepts and
                     modern services like wet cleaning were virtually unheard of
                     in this region. We brought these innovations to Ottapalam,
@@ -1102,7 +1104,7 @@ export default function App() {
                   <h3 className="font-display font-semibold text-foreground text-lg mb-1">
                     Professional Team
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     Our dedicated team of laundry professionals specialises in
                     cleaning and finishing, combining technical expertise with a
                     personal touch to deliver results that exceed expectations.
@@ -1117,7 +1119,7 @@ export default function App() {
                   <h3 className="font-display font-semibold text-foreground text-lg mb-1">
                     Founded on Excellence
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     Built on the principles of reliability, care, and efficiency
                     — Saf Laundry was created to take the &ldquo;chore&rdquo;
                     out of your week. Every garment, from your everyday tee to
@@ -1142,7 +1144,7 @@ export default function App() {
             <h3 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-4">
               Our Mission
             </h3>
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-6">
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-6">
               To provide a flawless laundry experience that gives you the
               freedom to focus on what matters most. Whether you are a busy
               professional, a parent juggling a million tasks, or someone who
@@ -1167,7 +1169,9 @@ export default function App() {
             <h3 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-2">
               Our Core Values
             </h3>
-            <p className="text-gray-700">The foundation of everything we do.</p>
+            <p className="text-muted-foreground">
+              The foundation of everything we do.
+            </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {coreValues.map((value, idx) => (
@@ -1188,7 +1192,7 @@ export default function App() {
                 <h4 className="font-display font-semibold text-foreground mb-2">
                   {value.title}
                 </h4>
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>
@@ -1219,7 +1223,7 @@ export default function App() {
               className="mb-4 px-4 py-1"
               style={{
                 background: "oklch(52% 0.22 225 / 0.12)",
-                color: "oklch(15% 0.01 0)",
+                color: "oklch(38% 0.22 225)",
                 border: "1px solid oklch(52% 0.22 225 / 0.25)",
               }}
             >
@@ -1228,7 +1232,7 @@ export default function App() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-2">
               Trusted by Thousands
             </h2>
-            <p className="text-gray-700 text-base sm:text-lg">
+            <p className="text-muted-foreground text-base sm:text-lg">
               Numbers that speak for our commitment to quality and care.
             </p>
           </motion.div>
@@ -1262,10 +1266,13 @@ export default function App() {
                   >
                     <stat.icon className="w-7 h-7 text-white" />
                   </div>
-                  <p className="font-display font-extrabold text-4xl sm:text-5xl mb-2 tracking-tight text-gray-900">
+                  <p
+                    className="font-display font-extrabold text-4xl sm:text-5xl mb-2 tracking-tight"
+                    style={{ color: "oklch(38% 0.22 225)" }}
+                  >
                     {stat.value}
                   </p>
-                  <p className="text-gray-700 font-medium text-base">
+                  <p className="text-muted-foreground font-medium text-base">
                     {stat.label}
                   </p>
                 </div>
@@ -1374,7 +1381,7 @@ export default function App() {
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
               Contact Us
             </h2>
-            <p className="text-gray-700 text-lg mb-10">
+            <p className="text-muted-foreground text-lg mb-10">
               Reach out to book a pickup, ask about our services, or visit us in
               Ottapalam, Kerala.
             </p>
@@ -1384,7 +1391,7 @@ export default function App() {
                   <Phone className="w-9 h-9 text-white" />
                 </div>
                 <div>
-                  <p className="text-gray-700 text-sm font-medium mb-2 uppercase tracking-widest">
+                  <p className="text-muted-foreground text-sm font-medium mb-2 uppercase tracking-widest">
                     Call or WhatsApp
                   </p>
                   <a
@@ -1547,7 +1554,7 @@ export default function App() {
                 </Button>
               </a>
             </div>
-            <div className="mt-10 flex items-center justify-center gap-2 text-gray-700">
+            <div className="mt-10 flex items-center justify-center gap-2 text-muted-foreground">
               <MapPin className="w-4 h-4" />
               <a
                 href={MAPS_URL}
@@ -1569,7 +1576,7 @@ export default function App() {
         className="py-10 bg-gray-200 border-t border-border"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-xs text-gray-700 uppercase tracking-widest mb-5 font-medium">
+          <p className="text-xs text-muted-foreground uppercase tracking-widest mb-5 font-medium">
             Customer Information
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
