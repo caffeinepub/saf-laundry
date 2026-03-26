@@ -587,7 +587,7 @@ export default function App() {
           >
             <Button
               size="sm"
-              className="hero-gradient text-white border-0 rounded-full px-3"
+              className="bg-gray-900 text-white border-0 rounded-full px-3"
             >
               <Phone className="w-3.5 h-3.5" />
             </Button>
