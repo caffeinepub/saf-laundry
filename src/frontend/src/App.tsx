@@ -1489,7 +1489,7 @@ export default function App() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white/50 text-white hover:bg-white/20 hover:text-white hover:border-white rounded-full px-8 font-semibold transition-all hover:scale-105"
+                  className="border-2 border-white text-white bg-transparent hover:bg-white/20 hover:text-white hover:border-white rounded-full px-8 font-semibold transition-all hover:scale-105"
                 >
                   <Instagram className="w-5 h-5 mr-2" />
                   Follow @saf.laundry
@@ -1504,7 +1504,7 @@ export default function App() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white/50 text-white hover:bg-white/20 hover:text-white hover:border-white rounded-full px-8 font-semibold transition-all hover:scale-105"
+                  className="border-2 border-white text-white bg-transparent hover:bg-white/20 hover:text-white hover:border-white rounded-full px-8 font-semibold transition-all hover:scale-105"
                 >
                   <Navigation className="w-5 h-5 mr-2" />
                   Get Directions
@@ -1519,7 +1519,7 @@ export default function App() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white/50 text-white hover:bg-white/20 hover:text-white hover:border-white rounded-full px-8 font-semibold transition-all hover:scale-105 gap-2"
+                  className="border-2 border-white text-white bg-transparent hover:bg-white/20 hover:text-white hover:border-white rounded-full px-8 font-semibold transition-all hover:scale-105 gap-2"
                 >
                   <svg
                     viewBox="0 0 24 24"
