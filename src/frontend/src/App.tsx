@@ -968,21 +968,60 @@ export default function App() {
                 </h3>
               </div>
               <ul className="divide-y divide-border">
-                {[{ name: "Shoes & Helmets Cleaning", price: "₹250" }].map(
-                  (item) => (
-                    <li
-                      key={item.name}
-                      className="flex items-center justify-between px-6 py-3.5"
-                    >
-                      <span className="text-sm text-gray-800 font-medium">
-                        {item.name}
-                      </span>
-                      <span className="text-sm font-bold text-emerald-700">
-                        {item.price}
-                      </span>
-                    </li>
-                  ),
-                )}
+                {[
+                  { name: "Shoes Cleaning", price: "₹250" },
+                  { name: "Helmets Cleaning", price: "₹250" },
+                  { name: "Hand Bag Cleaning", price: "₹150" },
+                  { name: "Trolly Bag Cleaning", price: "₹300" },
+                ].map((item) => (
+                  <li
+                    key={item.name}
+                    className="flex items-center justify-between px-6 py-3.5"
+                  >
+                    <span className="text-sm text-gray-800 font-medium">
+                      {item.name}
+                    </span>
+                    <span className="text-sm font-bold text-emerald-700">
+                      {item.price}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Premium Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white rounded-2xl shadow-sm border border-border overflow-hidden md:col-span-2"
+            >
+              <div className="bg-yellow-600 px-6 py-4 flex items-center gap-3">
+                <span className="text-2xl">⭐</span>
+                <h3 className="text-lg font-bold text-white">
+                  Premium Services
+                </h3>
+              </div>
+              <ul className="divide-y divide-border grid grid-cols-1 sm:grid-cols-2">
+                {[
+                  { name: "Shirts Premium Care", price: "₹120" },
+                  { name: "Pants Premium Care", price: "₹150" },
+                  { name: "Blazer Premium Care", price: "₹250" },
+                  { name: "Saree Premium Care", price: "₹300" },
+                ].map((item) => (
+                  <li
+                    key={item.name}
+                    className="flex items-center justify-between px-6 py-3.5 border-b border-border"
+                  >
+                    <span className="text-sm text-gray-800 font-medium">
+                      {item.name}
+                    </span>
+                    <span className="text-sm font-bold text-yellow-700">
+                      {item.price}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </motion.div>
           </div>
