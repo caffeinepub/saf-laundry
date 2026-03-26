@@ -820,7 +820,7 @@ export default function App() {
                 >
                   <button
                     type="button"
-                    className="bg-white text-primary font-bold px-6 py-3 rounded-full shadow hover:bg-emerald-50 transition-colors text-sm whitespace-nowrap"
+                    className="bg-white text-emerald-600 font-bold px-6 py-3 rounded-full shadow hover:bg-emerald-50 transition-colors text-sm whitespace-nowrap"
                   >
                     Book This Package
                   </button>
