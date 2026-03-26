@@ -753,7 +753,7 @@ export default function App() {
       </section>
 
       {/* RATES */}
-      <section id="rates" className="py-20 sm:py-28 bg-gray-200">
+      <section id="rates" className="py-20 sm:py-28 bg-[oklch(25%_0.18_228)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -765,10 +765,10 @@ export default function App() {
             <span className="inline-block text-sm font-semibold tracking-widest uppercase text-primary mb-3">
               Transparent Pricing
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Our Rates &amp; Packages
             </h2>
-            <p className="text-gray-700 max-w-xl mx-auto text-base sm:text-lg">
+            <p className="text-gray-300 max-w-xl mx-auto text-base sm:text-lg">
               Simple, affordable pricing for every garment. No hidden charges —
               what you see is what you pay.
             </p>
@@ -994,7 +994,7 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center"
           >
-            <p className="text-xs text-gray-700 mb-6">
+            <p className="text-xs text-gray-300 mb-6">
               * Prices may vary based on garment type and condition. Contact us
               for a custom quote.
             </p>
