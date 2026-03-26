@@ -685,7 +685,7 @@ export default function App() {
       <section
         id="services"
         className="py-20 sm:py-28"
-        style={{ background: "oklch(93% 0.012 70)" }}
+        style={{ background: "oklch(22% 0.18 228)" }}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -695,13 +695,13 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <Badge className="bg-amber-100 text-amber-700 border-amber-200 mb-4 px-4 py-1">
+            <Badge className="bg-amber-800/60 text-amber-100 border-amber-700 mb-4 px-4 py-1">
               Our Services
             </Badge>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
               What We Do Best
             </h2>
-            <p className="text-gray-800 text-lg max-w-xl mx-auto">
+            <p className="text-gray-200 text-lg max-w-xl mx-auto">
               From delicate silks to everyday wear, we handle all your laundry
               needs with professional expertise.
             </p>
@@ -716,7 +716,7 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
-                className="card-hover group bg-card rounded-2xl overflow-hidden shadow-xs border border-border"
+                className="card-hover group bg-white/10 rounded-2xl overflow-hidden shadow-xs border border-white/10"
               >
                 <div className="relative h-44 overflow-hidden">
                   <img
@@ -739,10 +739,10 @@ export default function App() {
                   >
                     <service.icon className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="font-display font-semibold text-base text-gray-900 leading-tight mb-2">
+                  <h3 className="font-display font-semibold text-base text-white leading-tight mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-gray-800 text-sm leading-relaxed">
+                  <p className="text-gray-200 text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -762,7 +762,7 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+            <span className="inline-block text-sm font-semibold tracking-widest uppercase text-emerald-400 mb-3">
               Transparent Pricing
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -780,7 +780,7 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: 0.05 }}
-            className="relative mb-8 rounded-2xl overflow-hidden shadow-lg border-2 border-primary bg-primary text-white"
+            className="relative mb-8 rounded-2xl overflow-hidden shadow-lg border-2 border-emerald-600 bg-emerald-600 text-white"
           >
             <div className="absolute top-4 right-4">
               <span className="bg-amber-400 text-amber-900 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
@@ -790,20 +790,20 @@ export default function App() {
             <div className="flex flex-col sm:flex-row items-center gap-6 px-8 py-8">
               <div className="text-5xl sm:text-6xl select-none">🏅</div>
               <div className="flex-1 text-center sm:text-left">
-                <p className="text-xs font-semibold uppercase tracking-widest text-blue-100 mb-1">
+                <p className="text-xs font-semibold uppercase tracking-widest text-white mb-1">
                   Annual Package
                 </p>
                 <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-1">
                   1 Year Package
                 </h3>
-                <p className="text-blue-100 text-sm mb-3">
+                <p className="text-white text-sm mb-3">
                   Gents Daily Wear &nbsp;·&nbsp; 730 pieces
                 </p>
                 <div className="flex flex-wrap items-center gap-3 justify-center sm:justify-start">
                   <span className="text-3xl sm:text-4xl font-extrabold">
                     ₹29,000
                   </span>
-                  <span className="text-blue-200 text-sm line-through">
+                  <span className="text-white/70 text-sm line-through">
                     ₹51,100
                   </span>
                   <span className="bg-white/20 text-white text-xs font-bold px-2.5 py-1 rounded-full">
@@ -820,7 +820,7 @@ export default function App() {
                 >
                   <button
                     type="button"
-                    className="bg-white text-primary font-bold px-6 py-3 rounded-full shadow hover:bg-blue-50 transition-colors text-sm whitespace-nowrap"
+                    className="bg-white text-primary font-bold px-6 py-3 rounded-full shadow hover:bg-emerald-50 transition-colors text-sm whitespace-nowrap"
                   >
                     Book This Package
                   </button>
@@ -837,10 +837,10 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative rounded-2xl overflow-hidden shadow border-2 border-primary/60 bg-gradient-to-br from-blue-50 to-white"
+              className="relative rounded-2xl overflow-hidden shadow border-2 border-emerald-400 bg-white"
             >
               <div className="absolute top-4 right-4">
-                <span className="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
                   6 Months
                 </span>
               </div>
@@ -866,7 +866,7 @@ export default function App() {
                 >
                   <button
                     type="button"
-                    className="w-full bg-primary text-white font-bold px-5 py-2.5 rounded-full shadow hover:bg-primary/90 transition-colors text-sm"
+                    className="w-full bg-emerald-600 text-white font-bold px-5 py-2.5 rounded-full shadow hover:bg-emerald-700 transition-colors text-sm"
                   >
                     Book This Package
                   </button>
@@ -880,10 +880,10 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative rounded-2xl overflow-hidden shadow border-2 border-primary/40 bg-gradient-to-br from-sky-50 to-white"
+              className="relative rounded-2xl overflow-hidden shadow border-2 border-emerald-400 bg-white"
             >
               <div className="absolute top-4 right-4">
-                <span className="bg-sky-100 text-sky-800 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
                   3 Months
                 </span>
               </div>
@@ -909,7 +909,7 @@ export default function App() {
                 >
                   <button
                     type="button"
-                    className="w-full bg-primary text-white font-bold px-5 py-2.5 rounded-full shadow hover:bg-primary/90 transition-colors text-sm"
+                    className="w-full bg-emerald-600 text-white font-bold px-5 py-2.5 rounded-full shadow hover:bg-emerald-700 transition-colors text-sm"
                   >
                     Book This Package
                   </button>
@@ -926,7 +926,7 @@ export default function App() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-white rounded-2xl shadow-sm border border-border overflow-hidden"
             >
-              <div className="bg-primary px-6 py-4 flex items-center gap-3">
+              <div className="bg-emerald-600 px-6 py-4 flex items-center gap-3">
                 <span className="text-2xl">👕</span>
                 <h3 className="text-lg font-bold text-white">Garments</h3>
               </div>
@@ -942,10 +942,10 @@ export default function App() {
                     key={item.name}
                     className="flex items-center justify-between px-6 py-3.5"
                   >
-                    <span className="text-sm text-foreground font-medium">
+                    <span className="text-sm text-gray-800 font-medium">
                       {item.name}
                     </span>
-                    <span className="text-sm font-bold text-primary">
+                    <span className="text-sm font-bold text-emerald-700">
                       {item.price}
                     </span>
                   </li>
@@ -961,7 +961,7 @@ export default function App() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-white rounded-2xl shadow-sm border border-border overflow-hidden"
             >
-              <div className="bg-primary px-6 py-4 flex items-center gap-3">
+              <div className="bg-emerald-600 px-6 py-4 flex items-center gap-3">
                 <span className="text-2xl">✨</span>
                 <h3 className="text-lg font-bold text-white">
                   Specialty Cleaning
@@ -974,10 +974,10 @@ export default function App() {
                       key={item.name}
                       className="flex items-center justify-between px-6 py-3.5"
                     >
-                      <span className="text-sm text-foreground font-medium">
+                      <span className="text-sm text-gray-800 font-medium">
                         {item.name}
                       </span>
-                      <span className="text-sm font-bold text-primary">
+                      <span className="text-sm font-bold text-emerald-700">
                         {item.price}
                       </span>
                     </li>
@@ -994,7 +994,7 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center"
           >
-            <p className="text-xs text-gray-300 mb-6">
+            <p className="text-xs text-gray-100 mb-6">
               * Prices may vary based on garment type and condition. Contact us
               for a custom quote.
             </p>
@@ -1027,7 +1027,7 @@ export default function App() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-20 sm:py-28 bg-slate-100">
+      <section id="about" className="py-20 sm:py-28 bg-[oklch(22%_0.18_228)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -1036,13 +1036,13 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <Badge className="bg-purple-100 text-purple-700 border-purple-200 mb-4 px-4 py-1">
+            <Badge className="bg-purple-800/60 text-purple-100 border-purple-700 mb-4 px-4 py-1">
               About Us
             </Badge>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
               About Saf Laundry
             </h2>
-            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-200 text-lg max-w-2xl mx-auto">
               At Saf Laundry, we believe that clean clothes are about more than
               just hygiene — they are about reclaiming your most valuable asset:
               time.
@@ -1083,10 +1083,10 @@ export default function App() {
                   <Droplets className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-display font-semibold text-foreground text-lg mb-1">
+                  <h3 className="font-display font-semibold text-white text-lg mb-1">
                     Pioneers in Modern Laundry
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-gray-200 text-sm leading-relaxed">
                     When we started Saf Laundry, live laundry concepts and
                     modern services like wet cleaning were virtually unheard of
                     in this region. We brought these innovations to Ottapalam,
@@ -1099,10 +1099,10 @@ export default function App() {
                   <Users className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-display font-semibold text-foreground text-lg mb-1">
+                  <h3 className="font-display font-semibold text-white text-lg mb-1">
                     Professional Team
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-gray-200 text-sm leading-relaxed">
                     Our dedicated team of laundry professionals specialises in
                     cleaning and finishing, combining technical expertise with a
                     personal touch to deliver results that exceed expectations.
@@ -1114,10 +1114,10 @@ export default function App() {
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-display font-semibold text-foreground text-lg mb-1">
+                  <h3 className="font-display font-semibold text-white text-lg mb-1">
                     Founded on Excellence
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-gray-200 text-sm leading-relaxed">
                     Built on the principles of reliability, care, and efficiency
                     — Saf Laundry was created to take the &ldquo;chore&rdquo;
                     out of your week. Every garment, from your everyday tee to
@@ -1134,15 +1134,15 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-card rounded-3xl border border-border p-8 sm:p-12 mb-12 text-center"
+            className="bg-[oklch(30%_0.18_228)] rounded-3xl border border-white/10 p-8 sm:p-12 mb-12 text-center"
           >
             <div className="w-14 h-14 gradient-violet rounded-2xl flex items-center justify-center mx-auto mb-5">
               <Target className="w-7 h-7 text-white" />
             </div>
-            <h3 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-4">
+            <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-4">
               Our Mission
             </h3>
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-6">
+            <p className="text-gray-200 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-6">
               To provide a flawless laundry experience that gives you the
               freedom to focus on what matters most. Whether you are a busy
               professional, a parent juggling a million tasks, or someone who
@@ -1150,7 +1150,7 @@ export default function App() {
               to lighten your load.
             </p>
             <blockquote className="border-l-4 border-primary pl-5 text-left max-w-lg mx-auto">
-              <p className="font-display text-foreground font-semibold text-lg italic">
+              <p className="font-display text-white font-semibold text-lg italic">
                 &ldquo;Clean clothes, clear mind. We handle the steam so you can
                 live your dream.&rdquo;
               </p>
@@ -1164,10 +1164,10 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <h3 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-2">
+            <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2">
               Our Core Values
             </h3>
-            <p className="text-gray-700">The foundation of everything we do.</p>
+            <p className="text-gray-200">The foundation of everything we do.</p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {coreValues.map((value, idx) => (
@@ -1178,17 +1178,17 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
-                className="bg-card rounded-2xl border border-border p-6 hover:shadow-md transition-shadow"
+                className="bg-[oklch(30%_0.18_228)] rounded-2xl border border-white/10 p-6 hover:shadow-md transition-shadow"
               >
                 <div
                   className={`w-10 h-10 ${value.gradient} rounded-xl flex items-center justify-center mb-4`}
                 >
                   <value.icon className="w-5 h-5 text-white" />
                 </div>
-                <h4 className="font-display font-semibold text-foreground mb-2">
+                <h4 className="font-display font-semibold text-white mb-2">
                   {value.title}
                 </h4>
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className="text-gray-200 text-sm leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>
@@ -1202,9 +1202,9 @@ export default function App() {
         data-ocid="stats.section"
         className="py-16 sm:py-20"
         style={{
-          background: "oklch(90% 0.025 225)",
-          borderTop: "1px solid oklch(88% 0.04 225)",
-          borderBottom: "1px solid oklch(88% 0.04 225)",
+          background: "oklch(18% 0.18 228)",
+          borderTop: "1px solid oklch(30% 0.15 228)",
+          borderBottom: "1px solid oklch(30% 0.15 228)",
         }}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -1219,16 +1219,16 @@ export default function App() {
               className="mb-4 px-4 py-1"
               style={{
                 background: "oklch(52% 0.22 225 / 0.12)",
-                color: "oklch(15% 0.01 0)",
+                color: "oklch(90% 0.02 225)",
                 border: "1px solid oklch(52% 0.22 225 / 0.25)",
               }}
             >
               Our Impact
             </Badge>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-2">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-2">
               Trusted by Thousands
             </h2>
-            <p className="text-gray-700 text-base sm:text-lg">
+            <p className="text-gray-200 text-base sm:text-lg">
               Numbers that speak for our commitment to quality and care.
             </p>
           </motion.div>
@@ -1246,8 +1246,8 @@ export default function App() {
                   delay: idx * 0.12,
                   ease: "easeOut",
                 }}
-                className="relative bg-white rounded-3xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group"
-                style={{ border: "1px solid oklch(88% 0.04 225)" }}
+                className="relative bg-[oklch(30%_0.18_228)] rounded-3xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group"
+                style={{ border: "1px solid oklch(40% 0.1 228)" }}
               >
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
@@ -1262,10 +1262,10 @@ export default function App() {
                   >
                     <stat.icon className="w-7 h-7 text-white" />
                   </div>
-                  <p className="font-display font-extrabold text-4xl sm:text-5xl mb-2 tracking-tight text-gray-900">
+                  <p className="font-display font-extrabold text-4xl sm:text-5xl mb-2 tracking-tight text-white">
                     {stat.value}
                   </p>
-                  <p className="text-gray-700 font-medium text-base">
+                  <p className="text-gray-200 font-medium text-base">
                     {stat.label}
                   </p>
                 </div>
@@ -1360,7 +1360,7 @@ export default function App() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-20 sm:py-28 bg-slate-100">
+      <section id="contact" className="py-20 sm:py-28 bg-[oklch(22%_0.18_228)]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -1368,23 +1368,23 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Badge className="bg-primary/10 text-primary border-primary/20 mb-4 px-4 py-1">
+            <Badge className="bg-primary/20 text-white border-white/20 mb-4 px-4 py-1">
               Get In Touch
             </Badge>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
               Contact Us
             </h2>
-            <p className="text-gray-700 text-lg mb-10">
+            <p className="text-gray-200 text-lg mb-10">
               Reach out to book a pickup, ask about our services, or visit us in
               Ottapalam, Kerala.
             </p>
-            <div className="bg-card rounded-3xl border border-border shadow-xs p-8 sm:p-12 mb-8">
+            <div className="bg-[oklch(30%_0.18_228)] rounded-3xl border border-white/10 shadow-xs p-8 sm:p-12 mb-8">
               <div className="flex flex-col items-center gap-6">
                 <div className="w-20 h-20 gradient-coral rounded-full flex items-center justify-center shadow-coral">
                   <Phone className="w-9 h-9 text-white" />
                 </div>
                 <div>
-                  <p className="text-gray-700 text-sm font-medium mb-2 uppercase tracking-widest">
+                  <p className="text-gray-300 text-sm font-medium mb-2 uppercase tracking-widest">
                     Call or WhatsApp
                   </p>
                   <a
@@ -1392,7 +1392,7 @@ export default function App() {
                     data-ocid="contact.call.primary_button"
                     className="block"
                   >
-                    <span className="font-display text-4xl sm:text-5xl font-bold text-foreground hover:text-primary transition-colors">
+                    <span className="font-display text-4xl sm:text-5xl font-bold text-white hover:text-primary transition-colors">
                       {PHONE}
                     </span>
                   </a>
@@ -1432,17 +1432,17 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-card rounded-3xl border border-border shadow-xs p-8 mb-8 text-left"
+              className="bg-[oklch(30%_0.18_228)] rounded-3xl border border-white/10 shadow-xs p-8 mb-8 text-left"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 gradient-amber rounded-xl flex items-center justify-center flex-shrink-0">
                   <Clock className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="font-display text-xl font-bold text-foreground">
+                <h3 className="font-display text-xl font-bold text-white">
                   Business Hours
                 </h3>
               </div>
-              <div className="divide-y divide-border">
+              <div className="divide-y divide-white/10">
                 {businessHours.map((entry) => {
                   const isToday = entry.day === todayName;
                   return (
@@ -1450,24 +1450,24 @@ export default function App() {
                       key={entry.day}
                       className={`flex items-center justify-between py-3 ${
                         isToday
-                          ? "text-amber-700 font-semibold"
-                          : "text-foreground"
+                          ? "text-amber-300 font-semibold"
+                          : "text-gray-200"
                       }`}
                     >
                       <div className="flex items-center gap-2">
                         <span className="text-sm">{entry.day}</span>
                         {isToday && (
-                          <Badge className="bg-amber-100 text-amber-700 border-amber-200 text-xs px-2 py-0">
+                          <Badge className="bg-amber-800 text-amber-100 border-amber-700 text-xs px-2 py-0">
                             Today
                           </Badge>
                         )}
                         {entry.special && !isToday && (
-                          <Badge className="bg-orange-50 text-orange-600 border-orange-200 text-xs px-2 py-0">
+                          <Badge className="bg-orange-800 text-orange-100 border-orange-700 text-xs px-2 py-0">
                             Short Day
                           </Badge>
                         )}
                         {entry.special && isToday && (
-                          <Badge className="bg-orange-50 text-orange-600 border-orange-200 text-xs px-2 py-0">
+                          <Badge className="bg-orange-800 text-orange-100 border-orange-700 text-xs px-2 py-0">
                             Short Day
                           </Badge>
                         )}
@@ -1489,7 +1489,7 @@ export default function App() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-foreground/20 text-foreground hover:bg-foreground hover:text-background rounded-full px-8 font-semibold transition-all hover:scale-105"
+                  className="border-2 border-white/50 text-white hover:bg-white/20 hover:text-white hover:border-white rounded-full px-8 font-semibold transition-all hover:scale-105"
                 >
                   <Instagram className="w-5 h-5 mr-2" />
                   Follow @saf.laundry
@@ -1504,7 +1504,7 @@ export default function App() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-foreground/20 text-foreground hover:bg-foreground hover:text-background rounded-full px-8 font-semibold transition-all hover:scale-105"
+                  className="border-2 border-white/50 text-white hover:bg-white/20 hover:text-white hover:border-white rounded-full px-8 font-semibold transition-all hover:scale-105"
                 >
                   <Navigation className="w-5 h-5 mr-2" />
                   Get Directions
@@ -1519,7 +1519,7 @@ export default function App() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-foreground/20 text-foreground hover:bg-foreground hover:text-background rounded-full px-8 font-semibold transition-all hover:scale-105 gap-2"
+                  className="border-2 border-white/50 text-white hover:bg-white/20 hover:text-white hover:border-white rounded-full px-8 font-semibold transition-all hover:scale-105 gap-2"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -1547,7 +1547,7 @@ export default function App() {
                 </Button>
               </a>
             </div>
-            <div className="mt-10 flex items-center justify-center gap-2 text-gray-700">
+            <div className="mt-10 flex items-center justify-center gap-2 text-gray-300">
               <MapPin className="w-4 h-4" />
               <a
                 href={MAPS_URL}
@@ -1566,10 +1566,10 @@ export default function App() {
       {/* POLICY LINKS SECTION */}
       <section
         data-ocid="policy.section"
-        className="py-10 bg-gray-200 border-t border-border"
+        className="py-10 bg-[oklch(20%_0.18_228)] border-t border-white/10"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-xs text-gray-700 uppercase tracking-widest mb-5 font-medium">
+          <p className="text-xs text-gray-300 uppercase tracking-widest mb-5 font-medium">
             Customer Information
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -1579,7 +1579,7 @@ export default function App() {
                 type="button"
                 data-ocid={`policy.${link.key}.open_modal_button`}
                 onClick={() => setOpenModal(link.key)}
-                className="px-5 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all duration-200"
+                className="px-5 py-2 rounded-full border-2 border-white/40 bg-white/10 text-white text-sm font-medium hover:bg-primary hover:text-white hover:border-primary transition-all duration-200"
               >
                 {link.label}
               </button>
@@ -1606,11 +1606,11 @@ export default function App() {
                 alt="Saf Laundry Logo"
                 className="h-8 w-auto"
               />
-              <span className="text-blue-200 text-sm">
+              <span className="text-white text-sm">
                 &nbsp;&middot;&nbsp;East Ottapalam, Kerala
               </span>
             </div>
-            <div className="flex flex-wrap items-center gap-3 text-sm text-blue-200">
+            <div className="flex flex-wrap items-center gap-3 text-sm text-white">
               <a
                 href={`tel:${PHONE}`}
                 data-ocid="footer.call.button"
@@ -1665,7 +1665,7 @@ export default function App() {
               </a>
             </div>
           </div>
-          <div className="mt-6 pt-6 border-t border-blue-800 text-center text-xs text-blue-300">
+          <div className="mt-6 pt-6 border-t border-white/20 text-center text-xs text-gray-200">
             &copy;2026 Saf Laundry . All rights reserved.
           </div>
         </div>
