@@ -698,10 +698,10 @@ export default function App() {
             <Badge className="bg-amber-100 text-amber-700 border-amber-200 mb-4 px-4 py-1">
               Our Services
             </Badge>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
               What We Do Best
             </h2>
-            <p className="text-gray-700 text-lg max-w-xl mx-auto">
+            <p className="text-gray-800 text-lg max-w-xl mx-auto">
               From delicate silks to everyday wear, we handle all your laundry
               needs with professional expertise.
             </p>
@@ -739,10 +739,10 @@ export default function App() {
                   >
                     <service.icon className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="font-display font-semibold text-base text-foreground leading-tight mb-2">
+                  <h3 className="font-display font-semibold text-base text-gray-900 leading-tight mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-gray-800 text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -1039,7 +1039,7 @@ export default function App() {
             <Badge className="bg-purple-100 text-purple-700 border-purple-200 mb-4 px-4 py-1">
               About Us
             </Badge>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
               About Saf Laundry
             </h2>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
@@ -1371,7 +1371,7 @@ export default function App() {
             <Badge className="bg-primary/10 text-primary border-primary/20 mb-4 px-4 py-1">
               Get In Touch
             </Badge>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
               Contact Us
             </h2>
             <p className="text-gray-700 text-lg mb-10">
